@@ -1,0 +1,16 @@
+{
+  "schema_version": 2,
+  "type": "knowledge_update",
+  "package_id": "demo-personal-001",
+  "entries": [
+    {
+      "id": "redes-estrela-demo",
+      "blocks": [
+        {
+          "id": "personal",
+          "content": "Exemplo fictício para teste de importação, não é entendimento do usuário."
+        }
+      ]
+    }
+  ]
+}

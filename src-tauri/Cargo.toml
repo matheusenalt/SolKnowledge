@@ -1,0 +1,31 @@
+[package]
+name = "sol-knowledge"
+version = "0.1.1"
+description = "Base pessoal de conhecimento offline"
+authors = ["SOL Knowledge"]
+edition = "2021"
+rust-version = "1.89"
+license = "GPL-3.0-only"
+
+[lib]
+name = "sol_knowledge_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.37", features = ["bundled", "backup"] }
+unicode-normalization = "0.1"
+strsim = "0.11"
+sha2 = "0.11"
+roxmltree = "0.21.2"
+image = { version = "0.25.9", default-features = false, features = ["png", "jpeg"] }
+zip = { version = "9.7.3", default-features = false, features = ["deflate"] }
+tempfile = "3.27.0"
+rfd = "0.17.2"
+same-file = "1.0.6"
+

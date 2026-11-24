@@ -1,0 +1,84 @@
+{
+  "schema_version": 2,
+  "type": "knowledge_update",
+  "package_id": "demo-topologia-001",
+  "entries": [
+    {
+      "id": "redes-estrela-demo",
+      "module_id": "redes-topologias",
+      "type": "concept",
+      "title": "Topologia estrela — exemplo de laboratório",
+      "technical_description": "Dispositivos finais conectados a um switch central.",
+      "keywords": [
+        "cabeamento",
+        "ligação de computadores",
+        "switch",
+        "rede local"
+      ],
+      "learning_status": "not_assessed",
+      "blocks": [
+        {
+          "id": "graph",
+          "type": "topology",
+          "title": "Topologia física",
+          "format": "graph",
+          "nodes": [
+            {
+              "id": "sw",
+              "label": "Switch",
+              "kind": "switch"
+            },
+            {
+              "id": "pc1",
+              "label": "PC 01",
+              "kind": "computer"
+            },
+            {
+              "id": "pc2",
+              "label": "PC 02",
+              "kind": "computer"
+            }
+          ],
+          "edges": [
+            {
+              "id": "e1",
+              "from": "sw",
+              "to": "pc1",
+              "from_port": "1",
+              "to_port": "eth0",
+              "medium": "Ethernet UTP"
+            },
+            {
+              "id": "e2",
+              "from": "sw",
+              "to": "pc2",
+              "from_port": "2",
+              "to_port": "eth0",
+              "medium": "Ethernet UTP"
+            }
+          ]
+        },
+        {
+          "id": "logical",
+          "type": "diagram",
+          "format": "mermaid",
+          "content": "graph TD\n SW[Switch] --> PC1[PC 01]\n SW --> PC2[PC 02]",
+          "caption": "Exemplo lógico de conexão"
+        },
+        {
+          "id": "cabling",
+          "type": "cabling",
+          "items": [
+            "Switch porta 1 → PC 01 eth0",
+            "Switch porta 2 → PC 02 eth0"
+          ]
+        },
+        {
+          "id": "personal",
+          "type": "personal_note",
+          "content": ""
+        }
+      ]
+    }
+  ]
+}

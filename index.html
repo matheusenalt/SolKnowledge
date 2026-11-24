@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Seu espaço pessoal de estudo e consulta offline."
+    />
+    <title>SOL Knowledge</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div id="app">
+      <aside class="sidebar" aria-label="Biblioteca pessoal">
+        <a class="brand" href="#home"
+          ><img
+            class="brand-logo"
+            src="/assets/sol.png"
+            alt="Sol amarelo"
+            width="44"
+            height="42"
+          /><span
+            ><strong>SOL <span>KNOWLEDGE</span></strong
+            ><small>Seu conhecimento, conectado.</small></span
+          ></a
+        >
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#home">◈ Visão geral</a
+          ><a href="#library">▤ Todos os registros</a
+          ><a href="#favorites">☆ Favoritos</a><a href="#history">◷ Histórico</a
+          ><a href="#vocabulary">≋ Meu vocabulário</a
+          ><a href="#transfer">⇄ Importação e backups</a>
+        </nav>
+        <div class="tree-heading">
+          <span class="sidebar-label">ÁREAS DE CONHECIMENTO</span
+          ><button
+            id="new-area"
+            class="secondary"
+            type="button"
+            disabled
+            aria-label="Criar área"
+          >
+            +
+          </button>
+        </div>
+        <nav id="library-tree" aria-label="Áreas, módulos e submódulos">
+          <p class="search-help">Carregando a biblioteca…</p>
+        </nav>
+        <footer class="sidebar-footer">
+          SOL Knowledge <span id="app-version">0.1.0</span>
+        </footer>
+      </aside>
+      <main id="conteudo" tabindex="-1">
+        <header class="topbar">
+          <form id="search-form" role="search">
+            <label class="sr-only" for="search-query">Pesquisa global</label
+            ><input
+              id="search-query"
+              type="search"
+              maxlength="256"
+              placeholder="Pesquisar em todo o conhecimento…"
+              autocomplete="off"
+              disabled
+            /><button id="search-submit" type="submit" disabled>
+              Pesquisar</button
+            ><kbd aria-label="Atalho Control K">Ctrl K</kbd>
+          </form>
+          <span class="local-badge">● Local</span>
+        </header>
+        <div class="workspace">
+          <nav id="breadcrumb" aria-label="Caminho de navegação">
+            <a href="#home">Biblioteca pessoal</a>
+          </nav>
+          <p id="notice" class="notice" role="status" aria-live="polite"></p>
+          <section
+            id="filters"
+            class="filter-bar"
+            aria-label="Filtros de conhecimento"
+            hidden
+          >
+            <label
+              >Área<select id="filter-area">
+                <option value="">Todas</option>
+              </select></label
+            ><label
+              >Módulo<select id="filter-module">
+                <option value="">Todos</option>
+              </select></label
+            ><label
+              >Tipo<select id="filter-type">
+                <option value="">Todos</option>
+              </select></label
+            ><label
+              >Aprendizado<select id="filter-status">
+                <option value="">Todos</option>
+              </select></label
+            ><button id="clear-filters" class="secondary" type="button">
+              Limpar filtros
+            </button>
+          </section>
+          <section id="page">
+            <p class="eyebrow">UM LUGAR PARA O QUE VOCÊ APRENDE</p>
+            <div class="hero">
+              <div>
+                <h1>Conhecimento<br />sem fronteiras<span>.</span></h1>
+                <p id="startup-status">Conectando à sua biblioteca local…</p>
+              </div>
+              <img
+                class="hero-logo"
+                src="/assets/sol.png"
+                alt="Logo oficial SOL Knowledge"
+                width="210"
+                height="199"
+              />
+            </div>
+          </section>
+          <section id="vocabulary-view" hidden>
+            <h1 tabindex="-1">Meu vocabulário</h1>
+            <p class="search-help">
+              Associe uma expressão a um registro. Os termos pessoais começam
+              vazios; não alteram suas notas nem o estado de aprendizado.
+            </p>
+            <form id="vocabulary-form">
+              <div class="vocabulary-fields">
+                <label
+                  >Tipo<select id="term-kind">
+                    <option value="personal">Meu vocabulário</option>
+                    <option value="synonym">Sinônimo</option>
+                  </select></label
+                ><label
+                  >Expressão<input
+                    id="term-phrase"
+                    maxlength="128"
+                    required
+                    placeholder="Uma expressão sua" /></label
+                ><label
+                  >Registro associado<select id="term-target" required>
+                    <option value="">Selecione um registro</option>
+                  </select></label
+                >
+              </div>
+              <div class="form-actions">
+                <button id="term-save" type="submit">Salvar expressão</button
+                ><button
+                  id="term-cancel"
+                  type="button"
+                  class="secondary"
+                  hidden
+                >
+                  Cancelar edição
+                </button>
+                <p id="term-status" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+            <div id="vocabulary-list"></div>
+          </section>
+          <footer class="workspace-footer">
+            <span id="library-summary">Base pessoal de conhecimento</span
+            ><span id="runtime-status" role="status">Conectando…</span>
+          </footer>
+        </div>
+      </main>
+    </div>
+    <dialog id="editor-dialog" aria-labelledby="editor-title"></dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

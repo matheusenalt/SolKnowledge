@@ -1,0 +1,229 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "areas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "profile_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "enabled_components": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "attachment",
+                "cabling",
+                "code",
+                "command",
+                "diagram",
+                "equipment",
+                "image",
+                "personal_note",
+                "procedure",
+                "reference",
+                "table",
+                "text",
+                "topology",
+                "troubleshooting",
+                "warning"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "area_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "order": {
+            "type": "integer"
+          },
+          "profile_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "enabled_components": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "attachment",
+                "cabling",
+                "code",
+                "command",
+                "diagram",
+                "equipment",
+                "image",
+                "personal_note",
+                "procedure",
+                "reference",
+                "table",
+                "text",
+                "topology",
+                "troubleshooting",
+                "warning"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "type": {
+      "const": "settings"
+    },
+    "app": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "appearance": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "enum": [
+            "dark",
+            "light"
+          ]
+        },
+        "primary_color": {
+          "type": "string"
+        },
+        "background_color": {
+          "type": "string"
+        },
+        "surface_color": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "show_all_command_options": {
+          "type": "boolean"
+        },
+        "automatic_backup": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "enabled_components": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "attachment",
+                "cabling",
+                "code",
+                "command",
+                "diagram",
+                "equipment",
+                "image",
+                "personal_note",
+                "procedure",
+                "reference",
+                "table",
+                "text",
+                "topology",
+                "troubleshooting",
+                "warning"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "type"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

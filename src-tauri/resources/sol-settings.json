@@ -1,0 +1,365 @@
+{
+  "schema_version": 2,
+  "type": "settings",
+  "app": {
+    "name": "SOL Knowledge",
+    "language": "pt-BR"
+  },
+  "appearance": {
+    "theme": "dark",
+    "primary_color": "#FACC15",
+    "background_color": "#101010",
+    "surface_color": "#202020",
+    "logo": "assets/sol.ico"
+  },
+  "preferences": {
+    "show_all_command_options": false,
+    "automatic_backup": true
+  },
+  "areas": [
+    {
+      "id": "linux",
+      "name": "Linux",
+      "icon": "terminal",
+      "profile_id": "linux"
+    },
+    {
+      "id": "redes",
+      "name": "Redes",
+      "icon": "network",
+      "profile_id": "redes"
+    },
+    {
+      "id": "programacao",
+      "name": "Programação",
+      "icon": "code",
+      "profile_id": "programacao"
+    },
+    {
+      "id": "automacoes",
+      "name": "Automações",
+      "icon": "workflow",
+      "profile_id": "automacoes"
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Computing",
+      "icon": "cloud",
+      "profile_id": "cloud"
+    },
+    {
+      "id": "seguranca",
+      "name": "Segurança da Informação",
+      "icon": "shield",
+      "profile_id": "seguranca"
+    },
+    {
+      "id": "bancos",
+      "name": "Banco de dados",
+      "icon": "database",
+      "profile_id": "bancos"
+    },
+    {
+      "id": "windows",
+      "name": "Windows Server",
+      "icon": "server",
+      "profile_id": "windows"
+    }
+  ],
+  "modules": [
+    {
+      "id": "linux-01",
+      "area_id": "linux",
+      "name": "Conhecendo o Linux",
+      "order": 1
+    },
+    {
+      "id": "linux-02",
+      "area_id": "linux",
+      "name": "Trabalhando com Comandos",
+      "order": 2
+    },
+    {
+      "id": "linux-03",
+      "area_id": "linux",
+      "name": "Editores de Texto",
+      "order": 3
+    },
+    {
+      "id": "linux-04",
+      "area_id": "linux",
+      "name": "Usuários e Grupos",
+      "order": 4
+    },
+    {
+      "id": "linux-05",
+      "area_id": "linux",
+      "name": "Trabalhando com Permissões",
+      "order": 5
+    },
+    {
+      "id": "linux-06",
+      "area_id": "linux",
+      "name": "Discos e Partições",
+      "order": 6
+    },
+    {
+      "id": "linux-07",
+      "area_id": "linux",
+      "name": "Inicialização e Processos",
+      "order": 7
+    },
+    {
+      "id": "linux-08",
+      "area_id": "linux",
+      "name": "Instalação de Programas",
+      "order": 8
+    },
+    {
+      "id": "linux-09",
+      "area_id": "linux",
+      "name": "Gerenciamento de Logs",
+      "order": 9
+    },
+    {
+      "id": "linux-10",
+      "area_id": "linux",
+      "name": "Kernel e Hardware",
+      "order": 10
+    },
+    {
+      "id": "linux-11",
+      "area_id": "linux",
+      "name": "Arranjos de Disco",
+      "order": 11
+    },
+    {
+      "id": "linux-12",
+      "area_id": "linux",
+      "name": "Shell Script",
+      "order": 12
+    },
+    {
+      "id": "linux-13",
+      "area_id": "linux",
+      "name": "Servidor Gráfico",
+      "order": 13
+    },
+    {
+      "id": "linux-14",
+      "area_id": "linux",
+      "name": "Redes no Linux",
+      "order": 14
+    },
+    {
+      "id": "linux-15",
+      "area_id": "linux",
+      "name": "Servidores - DNS",
+      "order": 15
+    },
+    {
+      "id": "linux-16",
+      "area_id": "linux",
+      "name": "Servidores - DHCP",
+      "order": 16
+    },
+    {
+      "id": "linux-17",
+      "area_id": "linux",
+      "name": "Servidores - LDAP",
+      "order": 17
+    },
+    {
+      "id": "linux-18",
+      "area_id": "linux",
+      "name": "Servidores - VPN",
+      "order": 18
+    },
+    {
+      "id": "linux-19",
+      "area_id": "linux",
+      "name": "Servidores - Web (Apache)",
+      "order": 19
+    },
+    {
+      "id": "linux-20",
+      "area_id": "linux",
+      "name": "Servidores - Web (Nginx)",
+      "order": 20
+    },
+    {
+      "id": "linux-21",
+      "area_id": "linux",
+      "name": "Servidores - Proxy",
+      "order": 21
+    },
+    {
+      "id": "linux-22",
+      "area_id": "linux",
+      "name": "Servidores - Firewall",
+      "order": 22
+    },
+    {
+      "id": "linux-23",
+      "area_id": "linux",
+      "name": "Servidores - Samba",
+      "order": 23
+    },
+    {
+      "id": "linux-24",
+      "area_id": "linux",
+      "name": "Hardening de Servidores",
+      "order": 24
+    },
+    {
+      "id": "redes-topologias",
+      "area_id": "redes",
+      "name": "Topologias de rede"
+    },
+    {
+      "id": "redes-cabeamento",
+      "area_id": "redes",
+      "name": "Cabeamento"
+    },
+    {
+      "id": "redes-fundamentos",
+      "area_id": "redes",
+      "name": "Fundamentos de redes"
+    },
+    {
+      "id": "cloud-arquiteturas",
+      "area_id": "cloud",
+      "name": "Arquiteturas"
+    },
+    {
+      "id": "programacao-fundamentos",
+      "area_id": "programacao",
+      "name": "Fundamentos"
+    },
+    {
+      "id": "automacoes-fluxos",
+      "area_id": "automacoes",
+      "name": "Fluxos e scripts"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "linux",
+      "name": "Linux",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "command",
+        "code",
+        "procedure",
+        "troubleshooting",
+        "reference",
+        "warning"
+      ]
+    },
+    {
+      "id": "redes",
+      "name": "Redes",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "diagram",
+        "topology",
+        "image",
+        "equipment",
+        "cabling",
+        "table",
+        "troubleshooting",
+        "reference",
+        "attachment"
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud Computing",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "diagram",
+        "topology",
+        "code",
+        "procedure",
+        "table",
+        "reference",
+        "attachment"
+      ]
+    },
+    {
+      "id": "programacao",
+      "name": "Programação",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "code",
+        "procedure",
+        "table",
+        "reference"
+      ]
+    },
+    {
+      "id": "automacoes",
+      "name": "Automações",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "diagram",
+        "code",
+        "procedure",
+        "troubleshooting",
+        "reference"
+      ]
+    },
+    {
+      "id": "seguranca",
+      "name": "Segurança da Informação",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "diagram",
+        "procedure",
+        "troubleshooting",
+        "warning",
+        "reference"
+      ]
+    },
+    {
+      "id": "bancos",
+      "name": "Banco de dados",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "code",
+        "table",
+        "diagram",
+        "procedure",
+        "reference"
+      ]
+    },
+    {
+      "id": "windows",
+      "name": "Windows Server",
+      "enabled_components": [
+        "text",
+        "personal_note",
+        "command",
+        "procedure",
+        "diagram",
+        "troubleshooting",
+        "reference"
+      ]
+    },
+    {
+      "id": "custom",
+      "name": "Personalizado",
+      "enabled_components": [
+        "text",
+        "personal_note"
+      ]
+    }
+  ]
+}

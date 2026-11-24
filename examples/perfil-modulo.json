@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "type": "settings",
+  "modules": [
+    {
+      "id": "redes-topologias",
+      "profile_id": "redes",
+      "enabled_components": [
+        "diagram",
+        "topology",
+        "cabling",
+        "text",
+        "personal_note",
+        "reference"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,492 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "areas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer"
+          },
+          "profile_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "enabled_components": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "attachment",
+                "cabling",
+                "code",
+                "command",
+                "diagram",
+                "equipment",
+                "image",
+                "personal_note",
+                "procedure",
+                "reference",
+                "table",
+                "text",
+                "topology",
+                "troubleshooting",
+                "warning"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "area_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "order": {
+            "type": "integer"
+          },
+          "profile_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "enabled_components": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "attachment",
+                "cabling",
+                "code",
+                "command",
+                "diagram",
+                "equipment",
+                "image",
+                "personal_note",
+                "procedure",
+                "reference",
+                "table",
+                "text",
+                "topology",
+                "troubleshooting",
+                "warning"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "type": {
+      "const": "knowledge_update"
+    },
+    "package_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "module_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "type": {
+            "enum": [
+              "command",
+              "concept",
+              "summary",
+              "procedure",
+              "troubleshooting",
+              "lab",
+              "project",
+              "note",
+              "reference"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "technical_description": {
+            "type": "string"
+          },
+          "simplified_description": {
+            "type": "string"
+          },
+          "personal_description": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "related_entries": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                },
+                "example": {
+                  "type": "string"
+                },
+                "nomenclature": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "application": {
+                  "type": "string"
+                },
+                "featured": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "options_coverage": {
+            "enum": [
+              "selected",
+              "complete"
+            ]
+          },
+          "learning_status": {
+            "enum": [
+              "not_assessed",
+              "studying",
+              "understood",
+              "applied"
+            ]
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "markdown": {
+            "type": "string"
+          },
+          "risk": {
+            "enum": [
+              "read_only",
+              "changes_state",
+              "destructive",
+              "context_dependent"
+            ]
+          },
+          "platform": {
+            "type": "string"
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                },
+                "type": {
+                  "enum": [
+                    "attachment",
+                    "cabling",
+                    "code",
+                    "command",
+                    "diagram",
+                    "equipment",
+                    "image",
+                    "personal_note",
+                    "procedure",
+                    "reference",
+                    "table",
+                    "text",
+                    "topology",
+                    "troubleshooting",
+                    "warning"
+                  ]
+                },
+                "title": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "format": {
+                  "enum": [
+                    "markdown",
+                    "plain",
+                    "mermaid",
+                    "asset",
+                    "graph"
+                  ]
+                },
+                "language": {
+                  "type": "string"
+                },
+                "asset_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "keywords": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "columns": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "nodes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                      },
+                      "label": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string"
+                      },
+                      "ip": {
+                        "type": "string"
+                      },
+                      "notes": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "edges": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                      },
+                      "from": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                      },
+                      "to": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+                      },
+                      "from_port": {
+                        "type": "string"
+                      },
+                      "to_port": {
+                        "type": "string"
+                      },
+                      "medium": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "from",
+                      "to"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "enabled_components": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "attachment",
+                "cabling",
+                "code",
+                "command",
+                "diagram",
+                "equipment",
+                "image",
+                "personal_note",
+                "procedure",
+                "reference",
+                "table",
+                "text",
+                "topology",
+                "troubleshooting",
+                "warning"
+              ]
+            },
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._+-]*$"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "media_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "filename",
+          "sha256",
+          "media_type"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "type",
+    "package_id"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

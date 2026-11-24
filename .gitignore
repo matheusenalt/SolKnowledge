@@ -1,0 +1,39 @@
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+src-tauri/target/
+src-tauri/gen/
+
+# Local project management and source kit
+prompts/
+audit/
+AGENTS.md
+/PROMPT_CODEX.md
+/PROJETO.md
+/IMPORTACAO.md
+data/referencia-linux.md
+*.rar
+*.zip
+*.pdf
+
+# User data, databases and temporary files
+*.db
+*.sqlite*
+*.db-wal
+*.db-shm
+data-test/
+userdata/
+.sol-data/
+*.log
+.env*
+.DS_Store
+Thumbs.db
+
+# Local editor settings
+.vscode/
+.idea/
+
+# Dependency lockfiles are deliberately tracked
+!package-lock.json
+!Cargo.lock

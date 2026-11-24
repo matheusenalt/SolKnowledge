@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SOL Knowledge",
+  "version": "0.1.1",
+  "identifier": "com.solknowledge.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [{
+      "label": "main",
+      "title": "SOL Knowledge",
+      "width": 1200,
+      "height": 820,
+      "minWidth": 800,
+      "minHeight": 600,
+      "center": true,
+      "backgroundColor": "#101010",
+      "theme": "Dark"
+    }],
+    "security": {
+      "capabilities": ["main-window"],
+      "csp": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob:; font-src 'self'; worker-src 'self'; connect-src ipc: http://ipc.localhost; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'",
+      "devCsp": "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob:; font-src 'self'; worker-src 'self'; connect-src ipc: http://ipc.localhost http://127.0.0.1:1420 ws://127.0.0.1:1420; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'",
+      "assetProtocol": { "enable": false, "scope": [] }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/sol.png", "icons/sol.ico"],
+    "resources": ["resources/sol-settings.json", "resources/seed/sol-update-linux.json"]
+  }
+}
+

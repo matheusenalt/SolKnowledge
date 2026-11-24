@@ -1,0 +1,2937 @@
+{
+  "schema_version": 1,
+  "type": "knowledge_update",
+  "package_id": "linux-reference-v1",
+  "areas": [
+    {
+      "id": "linux",
+      "name": "Linux",
+      "icon": "terminal"
+    }
+  ],
+  "modules": [
+    {
+      "id": "linux-01",
+      "area_id": "linux",
+      "name": "Conhecendo o Linux",
+      "order": 1
+    },
+    {
+      "id": "linux-02",
+      "area_id": "linux",
+      "name": "Trabalhando com Comandos",
+      "order": 2
+    },
+    {
+      "id": "linux-03",
+      "area_id": "linux",
+      "name": "Editores de Texto",
+      "order": 3
+    },
+    {
+      "id": "linux-04",
+      "area_id": "linux",
+      "name": "Usuários e Grupos",
+      "order": 4
+    },
+    {
+      "id": "linux-05",
+      "area_id": "linux",
+      "name": "Trabalhando com Permissões",
+      "order": 5
+    },
+    {
+      "id": "linux-06",
+      "area_id": "linux",
+      "name": "Discos e Partições",
+      "order": 6
+    },
+    {
+      "id": "linux-07",
+      "area_id": "linux",
+      "name": "Inicialização e Processos",
+      "order": 7
+    },
+    {
+      "id": "linux-08",
+      "area_id": "linux",
+      "name": "Instalação de Programas",
+      "order": 8
+    },
+    {
+      "id": "linux-09",
+      "area_id": "linux",
+      "name": "Gerenciamento de Logs",
+      "order": 9
+    },
+    {
+      "id": "linux-10",
+      "area_id": "linux",
+      "name": "Kernel e Hardware",
+      "order": 10
+    },
+    {
+      "id": "linux-11",
+      "area_id": "linux",
+      "name": "Arranjos de Disco",
+      "order": 11
+    },
+    {
+      "id": "linux-12",
+      "area_id": "linux",
+      "name": "Shell Script",
+      "order": 12
+    },
+    {
+      "id": "linux-13",
+      "area_id": "linux",
+      "name": "Servidor Gráfico",
+      "order": 13
+    },
+    {
+      "id": "linux-14",
+      "area_id": "linux",
+      "name": "Redes no Linux",
+      "order": 14
+    },
+    {
+      "id": "linux-15",
+      "area_id": "linux",
+      "name": "Servidores - DNS",
+      "order": 15
+    },
+    {
+      "id": "linux-16",
+      "area_id": "linux",
+      "name": "Servidores - DHCP",
+      "order": 16
+    },
+    {
+      "id": "linux-17",
+      "area_id": "linux",
+      "name": "Servidores - LDAP",
+      "order": 17
+    },
+    {
+      "id": "linux-18",
+      "area_id": "linux",
+      "name": "Servidores - VPN",
+      "order": 18
+    },
+    {
+      "id": "linux-19",
+      "area_id": "linux",
+      "name": "Servidores - Web (Apache)",
+      "order": 19
+    },
+    {
+      "id": "linux-20",
+      "area_id": "linux",
+      "name": "Servidores - Web (Nginx)",
+      "order": 20
+    },
+    {
+      "id": "linux-21",
+      "area_id": "linux",
+      "name": "Servidores - Proxy",
+      "order": 21
+    },
+    {
+      "id": "linux-22",
+      "area_id": "linux",
+      "name": "Servidores - Firewall",
+      "order": 22
+    },
+    {
+      "id": "linux-23",
+      "area_id": "linux",
+      "name": "Servidores - Samba",
+      "order": 23
+    },
+    {
+      "id": "linux-24",
+      "area_id": "linux",
+      "name": "Hardening de Servidores",
+      "order": 24
+    }
+  ],
+  "entries": [
+    {
+      "id": "linux-cmd-pwd",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "pwd",
+      "full_name": "print working directory",
+      "technical_description": "Informa o diretório atual.",
+      "simplified_description": "Informa o diretório atual.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "pwd",
+          "nomenclature": "sem opção",
+          "description": "Mostra o caminho do diretório atual.",
+          "application": "Antes de editar arquivos, confirme onde você está.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "pwd -P",
+          "nomenclature": "P = physical",
+          "description": "Resolve links simbólicos no caminho exibido.",
+          "application": "Confira o diretório físico em estruturas com links.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ls",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "ls",
+      "full_name": "list",
+      "technical_description": "Lista conteúdo de diretórios.",
+      "simplified_description": "Lista conteúdo de diretórios.",
+      "keywords": [
+        "ver arquivos",
+        "pasta",
+        "arquivos escondidos",
+        "listar tudo"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "ls -l",
+          "nomenclature": "l = long listing",
+          "description": "Exibe proprietário, grupo, permissões, tamanho e data.",
+          "application": "Inspecione as permissões de /etc/ssh.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "ls -lh /var/log",
+          "nomenclature": "l = long; h = human-readable",
+          "description": "Mostra detalhamento e tamanhos legíveis.",
+          "application": "Veja os tamanhos de logs sem interpretar bytes.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "ls -la",
+          "nomenclature": "l = long; a = all",
+          "description": "Lista também nomes ocultos (começando com ponto).",
+          "application": "Localize arquivos .env e .ssh na pasta pessoal.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "ls -lah /etc",
+          "nomenclature": "l + a + h",
+          "description": "Combina detalhes, ocultos e tamanhos legíveis.",
+          "application": "Inventarie conteúdo de /etc.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "ls -lt /var/log",
+          "nomenclature": "l = long; t = time",
+          "description": "Ordena por data de modificação, mais recentes antes.",
+          "application": "Localize logs recentemente alterados.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "ls -lhS /var/log",
+          "nomenclature": "S = sort by size (maiúsculo)",
+          "description": "Ordena por tamanho, maior primeiro.",
+          "application": "Investigue quais logs estão grandes.",
+          "featured": false
+        },
+        {
+          "id": "007",
+          "example": "ls -R ~/projetos",
+          "nomenclature": "R = recursive (maiúsculo)",
+          "description": "Lista pastas e subpastas.",
+          "application": "Veja a estrutura de um projeto pequeno.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-cd",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "cd",
+      "full_name": "change directory",
+      "technical_description": "Muda a pasta de trabalho; é comando interno do shell.",
+      "simplified_description": "Muda a pasta de trabalho; é comando interno do shell.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "cd /etc",
+          "nomenclature": "caminho absoluto",
+          "description": "Entra em /etc.",
+          "application": "Visite a pasta de configurações do sistema.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "cd ..",
+          "nomenclature": ".. = diretório pai",
+          "description": "Sobe um nível.",
+          "application": "Saia de /etc/nginx para /etc.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "cd ~",
+          "nomenclature": "~ = home do usuário",
+          "description": "Vai para sua pasta pessoal.",
+          "application": "Retorne ao ambiente de trabalho.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "cd -",
+          "nomenclature": "- = diretório anterior",
+          "description": "Alterna para a última pasta.",
+          "application": "Compare configurações e logs alternando pastas.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-mkdir",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "mkdir",
+      "full_name": "make directory",
+      "technical_description": "Cria pastas.",
+      "simplified_description": "Cria pastas.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "mkdir laboratorio",
+          "nomenclature": "sem opção",
+          "description": "Cria uma pasta no diretório atual.",
+          "application": "Crie uma área de treinamento.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "mkdir -p ~/lab/linux/logs",
+          "nomenclature": "p = parents",
+          "description": "Cria todas as pastas necessárias, sem erro se já existirem.",
+          "application": "Monte uma árvore de laboratório em uma operação.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "mkdir -pv ~/lab/servidor/bkp",
+          "nomenclature": "p = parents; v = verbose",
+          "description": "Cria os níveis faltantes e informa o que foi criado.",
+          "application": "Veja o resultado ao preparar diretórios de backup.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "mkdir -m 700 privado",
+          "nomenclature": "m = mode",
+          "description": "Cria com permissões específicas.",
+          "application": "Crie uma pasta acessível apenas ao proprietário, sujeito a contexto do sistema.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-touch",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "touch",
+      "full_name": "touch = tocar (não é sigla)",
+      "technical_description": "Cria arquivo vazio quando necessário ou atualiza timestamps.",
+      "simplified_description": "Cria arquivo vazio quando necessário ou atualiza timestamps.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "touch notas.txt",
+          "nomenclature": "sem opção",
+          "description": "Cria o arquivo ou altera as datas de acesso/modificação.",
+          "application": "Prepare arquivo de anotações para teste.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "touch -c notas.txt",
+          "nomenclature": "c = no-create",
+          "description": "Atualiza timestamps apenas se o arquivo já existir.",
+          "application": "Evite gerar arquivo novo em um procedimento.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "touch -t 202611240900 notas.txt",
+          "nomenclature": "t = timestamp",
+          "description": "Define data e hora: AAAAMMDDhhmm.",
+          "application": "Teste filtros por data em ambiente de laboratório.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-man",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "man",
+      "full_name": "manual",
+      "technical_description": "Abre a documentação de um comando.",
+      "simplified_description": "Abre a documentação de um comando.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "man ls",
+          "nomenclature": "sem opção",
+          "description": "Abre o manual do ls.",
+          "application": "Pesquise as opções disponíveis.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "man -k network",
+          "nomenclature": "k = keyword",
+          "description": "Busca manuais pelo termo pesquisado (apropos).",
+          "application": "Descubra comandos relacionados a rede.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-help",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "help",
+      "full_name": "help = ajuda; comando interno do Bash",
+      "technical_description": "Mostra ajuda para comandos internos do shell.",
+      "simplified_description": "Mostra ajuda para comandos internos do shell.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "help cd",
+          "nomenclature": "sem opção",
+          "description": "Mostra a ajuda do comando interno cd.",
+          "application": "Veja particularidades que não vêm de um executável externo.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-type",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "type",
+      "full_name": "type = tipo",
+      "technical_description": "Mostra como o shell interpreta o nome de um comando.",
+      "simplified_description": "Mostra como o shell interpreta o nome de um comando.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "type cd",
+          "nomenclature": "sem opção",
+          "description": "Informa se é comando interno, alias, função ou executável.",
+          "application": "Entenda por que cd funciona sem arquivo binário.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "type -a ls",
+          "nomenclature": "a = all",
+          "description": "Lista todas as resoluções encontradas.",
+          "application": "Descubra aliases e binários com o mesmo nome.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-history",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "history",
+      "full_name": "history = histórico",
+      "technical_description": "Exibe comandos guardados pelo shell.",
+      "simplified_description": "Exibe comandos guardados pelo shell.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "history",
+          "nomenclature": "sem opção",
+          "description": "Mostra os comandos recentes.",
+          "application": "Reencontre uma sequência que funcionou.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "history 20",
+          "nomenclature": "20 = quantidade, não opção",
+          "description": "Exibe até 20 entradas recentes do histórico.",
+          "application": "Revise os últimos testes.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-cat",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "cat",
+      "full_name": "concatenate",
+      "technical_description": "Concatena e exibe conteúdo de arquivos.",
+      "simplified_description": "Concatena e exibe conteúdo de arquivos.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "cat /etc/os-release",
+          "nomenclature": "sem opção",
+          "description": "Exibe dados da distribuição.",
+          "application": "Identifique versão do sistema.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "cat -n arquivo.txt",
+          "nomenclature": "n = number",
+          "description": "Numera todas as linhas.",
+          "application": "Aponte uma linha específica numa configuração.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "cat -b arquivo.txt",
+          "nomenclature": "b = number nonblank",
+          "description": "Numera somente linhas não vazias.",
+          "application": "Leia arquivo com muitos espaços em branco.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-less",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "less",
+      "full_name": "less = menos; visualizador paginado",
+      "technical_description": "Exibe textos em páginas; pressione q para sair.",
+      "simplified_description": "Exibe textos em páginas; pressione q para sair.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "less /var/log/syslog",
+          "nomenclature": "sem opção",
+          "description": "Permite percorrer o texto sem imprimir tudo.",
+          "application": "Investigue um log comprido.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "less -N /etc/ssh/sshd_config",
+          "nomenclature": "N = LINE-NUMBERS (maiúsculo)",
+          "description": "Exibe números de linha na margem.",
+          "application": "Localize um parâmetro em um arquivo.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-head",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "head",
+      "full_name": "head = cabeça / começo",
+      "technical_description": "Exibe o início de um arquivo.",
+      "simplified_description": "Exibe o início de um arquivo.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "head -n 20 arquivo.log",
+          "nomenclature": "n = lines (número)",
+          "description": "Mostra as primeiras 20 linhas.",
+          "application": "Veja cabeçalhos de dados ou início do log.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "head -c 100 arquivo.txt",
+          "nomenclature": "c = bytes",
+          "description": "Mostra os primeiros 100 bytes.",
+          "application": "Faça uma inspeção curta de arquivo textual.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-tail",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "tail",
+      "full_name": "tail = cauda / final",
+      "technical_description": "Exibe o final de um arquivo.",
+      "simplified_description": "Exibe o final de um arquivo.",
+      "keywords": [
+        "log em tempo real"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "tail -n 30 /var/log/syslog",
+          "nomenclature": "n = lines",
+          "description": "Mostra as 30 últimas linhas.",
+          "application": "Veja eventos recentes.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "tail -f /var/log/syslog",
+          "nomenclature": "f = follow",
+          "description": "Continua exibindo linhas novas; Ctrl+C encerra.",
+          "application": "Monitore eventos enquanto reproduz um problema.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "tail -n 50 -f /var/log/syslog",
+          "nomenclature": "n + f",
+          "description": "Mostra 50 linhas iniciais da visualização e acompanha novas.",
+          "application": "Acompanhe logs ao reiniciar um serviço em laboratório.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-cp",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "cp",
+      "full_name": "copy",
+      "technical_description": "Copia arquivos/diretórios.",
+      "simplified_description": "Copia arquivos/diretórios.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "cp origem.txt copia.txt",
+          "nomenclature": "sem opção",
+          "description": "Copia um arquivo.",
+          "application": "Salve uma cópia antes de editar.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "cp -i origem.txt destino.txt",
+          "nomenclature": "i = interactive",
+          "description": "Pede confirmação antes de sobrescrever um destino existente.",
+          "application": "Evite substituição acidental.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "cp -r ~/lab/origem ~/lab/copia",
+          "nomenclature": "r = recursive",
+          "description": "Copia diretórios recursivamente.",
+          "application": "Duplique uma estrutura de teste.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "cp -a ~/lab/origem ~/lab/arquivo",
+          "nomenclature": "a = archive",
+          "description": "Preserva atributos e copia recursivamente.",
+          "application": "Faça cópia de arquivos administrativos preservando metadados, conforme permissões.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "cp -v origem.txt copia.txt",
+          "nomenclature": "v = verbose",
+          "description": "Informa quais cópias foram efetuadas.",
+          "application": "Acompanhe a operação.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-mv",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "mv",
+      "full_name": "move",
+      "technical_description": "Move ou renomeia arquivos.",
+      "simplified_description": "Move ou renomeia arquivos.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "mv antigo.txt novo.txt",
+          "nomenclature": "sem opção",
+          "description": "Renomeia ou move o arquivo.",
+          "application": "Organize nomes de relatórios.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "mv -i arquivo.txt ~/lab/arquivo.txt",
+          "nomenclature": "i = interactive",
+          "description": "Pergunta antes de sobrescrever o destino.",
+          "application": "Evite substituir um arquivo existente.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "mv -v a.txt b.txt",
+          "nomenclature": "v = verbose",
+          "description": "Mostra o que foi movido/renomeado.",
+          "application": "Confirme o resultado de uma reorganização.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-rm",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "rm",
+      "full_name": "remove",
+      "technical_description": "Remove arquivos; sem lixeira por padrão. Cuidado.",
+      "simplified_description": "Remove arquivos; sem lixeira por padrão. Cuidado.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "rm -i teste.txt",
+          "nomenclature": "i = interactive",
+          "description": "Solicita confirmação para apagar o arquivo.",
+          "application": "Remova arquivo de teste com proteção.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "rm -r ~/lab/antigo",
+          "nomenclature": "r = recursive",
+          "description": "Remove diretório e seu conteúdo. IRREVERSÍVEL por padrão.",
+          "application": "Limpe SOMENTE uma pasta de laboratório previamente conferida.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "rm -rf CAMINHO",
+          "nomenclature": "r = recursive; f = force",
+          "description": "Remoção recursiva e forçada, sem perguntas. ALTO RISCO.",
+          "application": "Comando para reconhecer e evitar em produção sem revisão e backup; não executar por hábito.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-file",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "file",
+      "full_name": "file = tipo de arquivo",
+      "technical_description": "Identifica o tipo de conteúdo de um arquivo.",
+      "simplified_description": "Identifica o tipo de conteúdo de um arquivo.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "file backup.tar.gz",
+          "nomenclature": "sem opção",
+          "description": "Identifica tipo provável por assinatura.",
+          "application": "Confira se um backup é um arquivo compactado.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "file -i arquivo.txt",
+          "nomenclature": "i = MIME type",
+          "description": "Mostra tipo MIME e codificação quando disponível.",
+          "application": "Diagnostique formato de arquivo recebido.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-stat",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "stat",
+      "full_name": "status (estatísticas do arquivo)",
+      "technical_description": "Exibe metadados detalhados.",
+      "simplified_description": "Exibe metadados detalhados.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "stat arquivo.txt",
+          "nomenclature": "sem opção",
+          "description": "Mostra tamanho, permissões e horários.",
+          "application": "Investigue proprietário e timestamps.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "stat -c \"%a %U:%G %n\" arquivo.txt",
+          "nomenclature": "c = format",
+          "description": "Seleciona campos: modo octal, dono, grupo, nome.",
+          "application": "Audite permissões objetivamente.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-find",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "find",
+      "full_name": "find = encontrar",
+      "technical_description": "Localiza arquivos por critérios.",
+      "simplified_description": "Localiza arquivos por critérios.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "find ~/lab -name \"*.log\"",
+          "nomenclature": "name = nome (sensível a maiúsculas)",
+          "description": "Procura nomes terminados em .log.",
+          "application": "Localize logs em um projeto.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "find ~/lab -iname \"*.LOG\"",
+          "nomenclature": "iname = insensitive name",
+          "description": "Ignora maiúsculas/minúsculas na busca pelo nome.",
+          "application": "Ache extensões inconsistentes.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "find /var/log -type f",
+          "nomenclature": "type f = regular file",
+          "description": "Retorna só arquivos comuns.",
+          "application": "Separe arquivos de diretórios.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "find ~/lab -type d",
+          "nomenclature": "type d = directory",
+          "description": "Retorna só pastas.",
+          "application": "Mapeie a hierarquia de diretórios.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "find ~/lab -type f -mtime -1",
+          "nomenclature": "mtime = modification time, -1 = menos de 1 dia de 24h",
+          "description": "Encontra arquivos alterados nas últimas 24 horas.",
+          "application": "Localize mudanças recentes em um projeto.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "find ~/lab -type f -size +100M",
+          "nomenclature": "size = tamanho; + = maior que; M = unidades de MiB",
+          "description": "Encontra arquivos maiores que aproximadamente 100 MiB.",
+          "application": "Procure candidatos a ocupar muito armazenamento.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-grep",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "grep",
+      "full_name": "global regular expression print (origem histórica)",
+      "technical_description": "Busca linhas que correspondem a texto ou expressão regular.",
+      "simplified_description": "Busca linhas que correspondem a texto ou expressão regular.",
+      "keywords": [
+        "procurar palavra",
+        "buscar texto"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "grep \"ERROR\" app.log",
+          "nomenclature": "sem opção",
+          "description": "Mostra linhas com ERROR.",
+          "application": "Localize erros em logs.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "grep -i \"error\" app.log",
+          "nomenclature": "i = ignore case",
+          "description": "Ignora diferença entre maiúsculas/minúsculas.",
+          "application": "Ache ERROR, Error e error.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "grep -n \"error\" app.log",
+          "nomenclature": "n = line number",
+          "description": "Inclui o número da linha.",
+          "application": "Indique localização exata em registro.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "grep -r \"timeout\" ~/lab/logs",
+          "nomenclature": "r = recursive",
+          "description": "Busca conteúdo em arquivos de subdiretórios.",
+          "application": "Encontre timeout em vários logs.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "grep -rn \"timeout\" ~/lab/logs",
+          "nomenclature": "r + n",
+          "description": "Busca recursivamente e exibe números de linha.",
+          "application": "Rastreie ocorrências em vários arquivos.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "grep -v \"INFO\" app.log",
+          "nomenclature": "v = invert match",
+          "description": "Mostra linhas que NÃO correspondem ao padrão.",
+          "application": "Oculte eventos informativos.",
+          "featured": false
+        },
+        {
+          "id": "007",
+          "example": "grep -E \"ERROR|WARN\" app.log",
+          "nomenclature": "E = extended regex",
+          "description": "Usa expressão regular estendida, incluindo alternância.",
+          "application": "Encontre duas classes de evento.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-wc",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "wc",
+      "full_name": "word count",
+      "technical_description": "Conta linhas, palavras e bytes.",
+      "simplified_description": "Conta linhas, palavras e bytes.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "wc -l app.log",
+          "nomenclature": "l = lines",
+          "description": "Conta linhas.",
+          "application": "Meça quantidade de registros de um log.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "wc -w notas.txt",
+          "nomenclature": "w = words",
+          "description": "Conta palavras.",
+          "application": "Analise texto.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "wc -c arquivo.txt",
+          "nomenclature": "c = bytes",
+          "description": "Conta bytes.",
+          "application": "Verifique tamanho bruto do arquivo.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-sort",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "sort",
+      "full_name": "sort = ordenar",
+      "technical_description": "Ordena linhas.",
+      "simplified_description": "Ordena linhas.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sort nomes.txt",
+          "nomenclature": "sem opção",
+          "description": "Ordena linhas lexicograficamente.",
+          "application": "Organize lista de hosts.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sort -n numeros.txt",
+          "nomenclature": "n = numeric",
+          "description": "Ordena numericamente, não como texto.",
+          "application": "Classifique contagens.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "sort -r nomes.txt",
+          "nomenclature": "r = reverse",
+          "description": "Inverte a ordem.",
+          "application": "Mostre resultados em ordem decrescente.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "sort -u nomes.txt",
+          "nomenclature": "u = unique",
+          "description": "Ordena e remove linhas idênticas.",
+          "application": "Produza uma lista sem repetições.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-uniq",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "uniq",
+      "full_name": "unique",
+      "technical_description": "Remove ou contabiliza linhas adjacentes repetidas.",
+      "simplified_description": "Remove ou contabiliza linhas adjacentes repetidas.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sort nomes.txt | uniq",
+          "nomenclature": "uniq sem opção",
+          "description": "Remove repetições após ordenar (repetições precisam estar juntas).",
+          "application": "Crie uma lista de máquinas únicas.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sort nomes.txt | uniq -c",
+          "nomenclature": "c = count",
+          "description": "Conta ocorrências de cada linha adjacente.",
+          "application": "Encontre eventos mais frequentes.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-cut",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "cut",
+      "full_name": "cut = recortar campos",
+      "technical_description": "Extrai partes de linhas.",
+      "simplified_description": "Extrai partes de linhas.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "cut -d: -f1 /etc/passwd",
+          "nomenclature": "d = delimiter; f = fields",
+          "description": "Usa : como separador e exibe o primeiro campo.",
+          "application": "Liste nomes de contas locais.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "cut -c1-10 arquivo.txt",
+          "nomenclature": "c = characters",
+          "description": "Extrai os dez primeiros caracteres.",
+          "application": "Inspecione prefixos de registros.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-whoami",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "whoami",
+      "full_name": "who am I",
+      "technical_description": "Exibe o nome do usuário efetivo atual.",
+      "simplified_description": "Exibe o nome do usuário efetivo atual.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "whoami",
+          "nomenclature": "sem opção",
+          "description": "Identifica a conta sob a qual o comando está sendo executado.",
+          "application": "Confira sua identidade antes de uma tarefa administrativa.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-id",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "id",
+      "full_name": "identity",
+      "technical_description": "Mostra UID, GID e grupos.",
+      "simplified_description": "Mostra UID, GID e grupos.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "id",
+          "nomenclature": "sem opção",
+          "description": "Exibe dados do usuário atual.",
+          "application": "Investigue permissões.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "id -u",
+          "nomenclature": "u = user ID",
+          "description": "Exibe só o UID.",
+          "application": "Identifique se a sessão efetiva é root (UID 0).",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "id usuario",
+          "nomenclature": "nome de conta como argumento",
+          "description": "Exibe identidade de uma conta específica.",
+          "application": "Veja os grupos de um colega do laboratório.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-groups",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "groups",
+      "full_name": "groups = grupos",
+      "technical_description": "Exibe grupos a que a conta pertence.",
+      "simplified_description": "Exibe grupos a que a conta pertence.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "groups",
+          "nomenclature": "sem opção",
+          "description": "Lista grupos do usuário atual.",
+          "application": "Diagnostique acesso a recursos.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "groups usuario",
+          "nomenclature": "nome de conta",
+          "description": "Lista grupos da conta informada.",
+          "application": "Confira associação a grupo de administração.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-sudo",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "sudo",
+      "full_name": "superuser do (origem histórica); executa como outro usuário",
+      "technical_description": "Executa comando com privilégios autorizados.",
+      "simplified_description": "Executa comando com privilégios autorizados.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sudo ls /root",
+          "nomenclature": "sem opção",
+          "description": "Lista diretório com privilégios, se autorizado.",
+          "application": "Faça diagnóstico de pasta protegida.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo -l",
+          "nomenclature": "l = list",
+          "description": "Mostra permissões de sudo concedidas ao usuário.",
+          "application": "Confira comandos administrativos autorizados.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "sudo -u usuario whoami",
+          "nomenclature": "u = user",
+          "description": "Executa como outro usuário indicado.",
+          "application": "Teste permissões de conta de serviço.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-chmod",
+      "module_id": "linux-05",
+      "type": "command",
+      "title": "chmod",
+      "full_name": "change mode",
+      "technical_description": "Muda bits de permissão.",
+      "simplified_description": "Muda bits de permissão.",
+      "keywords": [
+        "permissão",
+        "liberar execução"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "chmod u+x script.sh",
+          "nomenclature": "u = user/dono; + = adiciona; x = execute",
+          "description": "Adiciona execução para o proprietário.",
+          "application": "Permita executar seu script de treinamento.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "chmod g-w arquivo.txt",
+          "nomenclature": "g = group; - = remove; w = write",
+          "description": "Remove escrita do grupo.",
+          "application": "Restrinja alterações coletivas.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "chmod 644 arquivo.txt",
+          "nomenclature": "6 = rw-; 4 = r--; 4 = r--",
+          "description": "Dono lê/escreve; grupo e outros só leem.",
+          "application": "Defina permissões típicas de arquivo não sensível.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "chmod 600 segredo.txt",
+          "nomenclature": "6 = rw- para dono; zeros para demais",
+          "description": "Somente o dono lê e escreve.",
+          "application": "Proteja segredo de laboratório.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "chmod 755 script.sh",
+          "nomenclature": "7 = rwx; 5 = r-x; 5 = r-x",
+          "description": "Dono pode escrever/executar; demais ler/executar.",
+          "application": "Configure script público não sensível.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-chown",
+      "module_id": "linux-05",
+      "type": "command",
+      "title": "chown",
+      "full_name": "change owner",
+      "technical_description": "Muda proprietário e/ou grupo; normalmente requer privilégio.",
+      "simplified_description": "Muda proprietário e/ou grupo; normalmente requer privilégio.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sudo chown usuario arquivo.txt",
+          "nomenclature": "owner = dono",
+          "description": "Define proprietário.",
+          "application": "Ajuste propriedade de arquivo entregue à conta correta.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo chown usuario:grupo arquivo.txt",
+          "nomenclature": "usuario:grupo = dono e grupo",
+          "description": "Define os dois ao mesmo tempo.",
+          "application": "Corrija responsável e grupo de um arquivo.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "sudo chown -R usuario:grupo ~/lab/site",
+          "nomenclature": "R = recursive",
+          "description": "Aplica a uma árvore inteira. CUIDADO com caminhos.",
+          "application": "Corrija uma árvore de testes após revisar impacto.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-passwd",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "passwd",
+      "full_name": "password",
+      "technical_description": "Define/atualiza senha.",
+      "simplified_description": "Define/atualiza senha.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "passwd",
+          "nomenclature": "sem opção",
+          "description": "Altera a senha da própria conta.",
+          "application": "Mantenha credenciais atualizadas.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo passwd usuario",
+          "nomenclature": "nome da conta",
+          "description": "Altera a senha dessa conta, com autorização.",
+          "application": "Redefina senha de usuário do laboratório.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-useradd",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "useradd",
+      "full_name": "user + add",
+      "technical_description": "Cria conta no sistema; baixo nível.",
+      "simplified_description": "Cria conta no sistema; baixo nível.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sudo useradd -m testeadmin",
+          "nomenclature": "m = create home",
+          "description": "Cria usuário com diretório pessoal.",
+          "application": "Cadastre conta de treinamento.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo useradd -m -s /bin/bash testeadmin",
+          "nomenclature": "s = shell",
+          "description": "Define shell de login explicitamente.",
+          "application": "Prepare uma conta com Bash.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-usermod",
+      "module_id": "linux-04",
+      "type": "command",
+      "title": "usermod",
+      "full_name": "user modification",
+      "technical_description": "Modifica uma conta existente.",
+      "simplified_description": "Modifica uma conta existente.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sudo usermod -aG sudo testeadmin",
+          "nomenclature": "a = append; G = supplementary Groups",
+          "description": "Adiciona a conta a grupo suplementar sem substituir os outros.",
+          "application": "Conceda participação no grupo sudo em Ubuntu quando autorizado; relogin pode ser necessário.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo usermod -s /bin/bash testeadmin",
+          "nomenclature": "s = shell",
+          "description": "Altera shell de login.",
+          "application": "Padronize o ambiente de conta de laboratório.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ps",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "ps",
+      "full_name": "process status",
+      "technical_description": "Fotografia dos processos em execução.",
+      "simplified_description": "Fotografia dos processos em execução.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "ps aux",
+          "nomenclature": "a/u/x = opções estilo BSD; sem hífen",
+          "description": "Lista processos de todos os usuários em formato detalhado.",
+          "application": "Localize processos usando CPU/memória.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "ps -ef",
+          "nomenclature": "e = every; f = full format",
+          "description": "Lista processos em formato completo.",
+          "application": "Identifique PID e PPID.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "ps aux | grep nginx",
+          "nomenclature": "pipe + grep",
+          "description": "Filtra processos cuja linha contém nginx.",
+          "application": "Confira se processo web parece estar ativo; pgrep é mais direto.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-pgrep",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "pgrep",
+      "full_name": "process grep",
+      "technical_description": "Encontra processos pelo nome.",
+      "simplified_description": "Encontra processos pelo nome.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "pgrep nginx",
+          "nomenclature": "sem opção",
+          "description": "Exibe os PIDs que correspondem ao nome.",
+          "application": "Localize processos nginx.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "pgrep -a sshd",
+          "nomenclature": "a = list full command line",
+          "description": "Exibe PID e linha de comando.",
+          "application": "Confira instâncias de sshd.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-top",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "top",
+      "full_name": "top = topo (monitor de processos)",
+      "technical_description": "Mostra processos e consumo em tempo real.",
+      "simplified_description": "Mostra processos e consumo em tempo real.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "top",
+          "nomenclature": "sem opção",
+          "description": "Abre monitor interativo; q para sair.",
+          "application": "Identifique alta carga no servidor.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "top -u usuario",
+          "nomenclature": "u = user",
+          "description": "Mostra processos de um usuário.",
+          "application": "Investigue consumo de conta específica.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "top -p 1234",
+          "nomenclature": "p = PID",
+          "description": "Acompanha um processo específico.",
+          "application": "Monitore uma aplicação conhecida.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-kill",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "kill",
+      "full_name": "kill = enviar sinal a processo (não necessariamente encerrar à força)",
+      "technical_description": "Envia sinais a PIDs.",
+      "simplified_description": "Envia sinais a PIDs.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "kill -TERM 1234",
+          "nomenclature": "TERM = terminate; sinal 15",
+          "description": "Solicita encerramento ordenado.",
+          "application": "Encerre processo de teste permitindo limpeza.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "kill -9 1234",
+          "nomenclature": "9 = SIGKILL",
+          "description": "Força término, sem limpeza de aplicação. ÚLTIMO RECURSO.",
+          "application": "Use somente após avaliar impacto e falha de término normal.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-uptime",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "uptime",
+      "full_name": "uptime = tempo de atividade",
+      "technical_description": "Mostra tempo ligado, usuários e load average.",
+      "simplified_description": "Mostra tempo ligado, usuários e load average.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "uptime",
+          "nomenclature": "sem opção",
+          "description": "Exibe duração desde boot e cargas médias.",
+          "application": "Avalie estabilidade geral do servidor.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "uptime -p",
+          "nomenclature": "p = pretty",
+          "description": "Mostra duração legível.",
+          "application": "Relate há quanto tempo a máquina está ligada.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-free",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "free",
+      "full_name": "free = livre",
+      "technical_description": "Exibe uso de RAM e swap.",
+      "simplified_description": "Exibe uso de RAM e swap.",
+      "keywords": [
+        "memória ram",
+        "memoria livre"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "free -h",
+          "nomenclature": "h = human-readable",
+          "description": "Usa tamanhos legíveis.",
+          "application": "Avalie memória disponível antes de investigar lentidão.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "free -m",
+          "nomenclature": "m = mebibytes",
+          "description": "Exibe valores em MiB.",
+          "application": "Compare números entre máquinas.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "free -h -s 2",
+          "nomenclature": "s = seconds",
+          "description": "Atualiza a cada dois segundos; Ctrl+C termina.",
+          "application": "Acompanhe variações durante teste.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-df",
+      "module_id": "linux-06",
+      "type": "command",
+      "title": "df",
+      "full_name": "disk free",
+      "technical_description": "Mostra uso e espaço de sistemas de arquivos montados.",
+      "simplified_description": "Mostra uso e espaço de sistemas de arquivos montados.",
+      "keywords": [
+        "hd cheio",
+        "quanto espaço sobra",
+        "disco ssd"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "df -h",
+          "nomenclature": "h = human-readable",
+          "description": "Exibe capacidade, uso e disponibilidade.",
+          "application": "Diagnostique partição lotada.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "df -hT",
+          "nomenclature": "h = human-readable; T = filesystem type",
+          "description": "Mostra espaço e tipo de filesystem.",
+          "application": "Descubra se um volume usa ext4, xfs etc.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "df -i",
+          "nomenclature": "i = inodes",
+          "description": "Exibe uso de inodes em vez de blocos.",
+          "application": "Investigue erro de espaço quando ainda há GB livres.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-du",
+      "module_id": "linux-06",
+      "type": "command",
+      "title": "du",
+      "full_name": "disk usage",
+      "technical_description": "Estima espaço usado por arquivos e pastas.",
+      "simplified_description": "Estima espaço usado por arquivos e pastas.",
+      "keywords": [
+        "pasta pesada",
+        "quanto ocupa"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "du -sh /var/log",
+          "nomenclature": "s = summarize; h = human-readable",
+          "description": "Exibe tamanho total do diretório.",
+          "application": "Descubra quanto espaço os logs consomem.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "du -h --max-depth=1 /var",
+          "nomenclature": "h e profundidade máxima 1",
+          "description": "Resume consumo dos subdiretórios imediatos.",
+          "application": "Ache qual setor de /var está crescendo.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "du -ah ~/lab",
+          "nomenclature": "a = all files; h = human-readable",
+          "description": "Lista arquivos e diretórios com tamanho.",
+          "application": "Investigue consumo numa pasta pequena.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-lsblk",
+      "module_id": "linux-06",
+      "type": "command",
+      "title": "lsblk",
+      "full_name": "list block devices",
+      "technical_description": "Lista discos e partições.",
+      "simplified_description": "Lista discos e partições.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "lsblk",
+          "nomenclature": "sem opção",
+          "description": "Exibe árvore de dispositivos de bloco.",
+          "application": "Confira discos reconhecidos.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "lsblk -f",
+          "nomenclature": "f = filesystem",
+          "description": "Exibe filesystem, UUID e montagem.",
+          "application": "Identifique volume antes de editar /etc/fstab.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS",
+          "nomenclature": "o = output columns",
+          "description": "Seleciona colunas exibidas.",
+          "application": "Prepare inventário de discos.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-findmnt",
+      "module_id": "linux-06",
+      "type": "command",
+      "title": "findmnt",
+      "full_name": "find mounts",
+      "technical_description": "Informa montagens atuais.",
+      "simplified_description": "Informa montagens atuais.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "findmnt",
+          "nomenclature": "sem opção",
+          "description": "Mostra árvore de montagens.",
+          "application": "Veja volumes associados a diretórios.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "findmnt /",
+          "nomenclature": "/ = ponto de montagem",
+          "description": "Mostra a montagem da raiz.",
+          "application": "Descubra o filesystem de /.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-systemctl",
+      "module_id": "linux-07",
+      "type": "command",
+      "title": "systemctl",
+      "full_name": "systemd control",
+      "technical_description": "Gerencia serviços e unidades do systemd.",
+      "simplified_description": "Gerencia serviços e unidades do systemd.",
+      "keywords": [
+        "serviço parado",
+        "programa rodando"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "systemctl status ssh",
+          "nomenclature": "status = estado",
+          "description": "Exibe estado do serviço SSH se instalado.",
+          "application": "Diagnostique falhas de acesso remoto.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo systemctl start ssh",
+          "nomenclature": "start = iniciar",
+          "description": "Inicia agora, sem necessariamente ativar no boot.",
+          "application": "Inicie um serviço parado em laboratório.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "sudo systemctl stop ssh",
+          "nomenclature": "stop = parar",
+          "description": "Para agora. PERIGO se acesso remoto usa SSH.",
+          "application": "Entenda o comando; nunca pare SSH da única sessão remota.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "sudo systemctl restart nginx",
+          "nomenclature": "restart = reiniciar",
+          "description": "Para e inicia novamente, interrompendo conexões.",
+          "application": "Aplique alterações de serviço web quando necessário.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "sudo systemctl reload nginx",
+          "nomenclature": "reload = recarregar configuração",
+          "description": "Pede recarga sem reiniciar quando suportada.",
+          "application": "Aplique configuração validada com menor impacto.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "sudo systemctl enable nginx",
+          "nomenclature": "enable = habilitar",
+          "description": "Configura inicialização automática no boot.",
+          "application": "Faça serviço iniciar após reinicialização.",
+          "featured": false
+        },
+        {
+          "id": "007",
+          "example": "sudo systemctl enable --now nginx",
+          "nomenclature": "enable + now = ativar e iniciar",
+          "description": "Habilita para boot e inicia imediatamente.",
+          "application": "Prepare inicialização de serviço instalado.",
+          "featured": false
+        },
+        {
+          "id": "008",
+          "example": "systemctl is-enabled nginx",
+          "nomenclature": "is-enabled = está habilitado?",
+          "description": "Informa se inicia automaticamente.",
+          "application": "Audite persistência no boot.",
+          "featured": false
+        },
+        {
+          "id": "009",
+          "example": "systemctl list-units --type=service --state=running",
+          "nomenclature": "type=service; state=running",
+          "description": "Lista unidades de serviço carregadas que estão rodando.",
+          "application": "Inventarie serviços ativos.",
+          "featured": false
+        },
+        {
+          "id": "010",
+          "example": "sudo systemctl daemon-reload",
+          "nomenclature": "daemon-reload = recarrega arquivos de unidade",
+          "description": "Releia definições do systemd, não é reload do serviço em si.",
+          "application": "Após editar um arquivo .service.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-journalctl",
+      "module_id": "linux-09",
+      "type": "command",
+      "title": "journalctl",
+      "full_name": "journal control",
+      "technical_description": "Consulta registros do journal do systemd.",
+      "simplified_description": "Consulta registros do journal do systemd.",
+      "keywords": [
+        "erro serviço",
+        "logs sistema"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "journalctl -b",
+          "nomenclature": "b = boot",
+          "description": "Exibe logs do boot atual.",
+          "application": "Investigue erros ocorridos após ligar.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "journalctl -u ssh",
+          "nomenclature": "u = unit",
+          "description": "Filtra logs da unidade ssh.",
+          "application": "Investigue tentativas de conexão ao SSH.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "journalctl -u ssh -n 50",
+          "nomenclature": "u = unit; n = lines",
+          "description": "Mostra últimos 50 registros do SSH.",
+          "application": "Veja eventos recentes relevantes.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "journalctl -u ssh -f",
+          "nomenclature": "u = unit; f = follow",
+          "description": "Acompanha novas mensagens do SSH.",
+          "application": "Verifique autenticação durante um teste.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "journalctl -p err -b",
+          "nomenclature": "p = priority; err = error; b = boot",
+          "description": "Mostra erros do boot atual.",
+          "application": "Localize ocorrências críticas.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "journalctl --since \"1 hour ago\"",
+          "nomenclature": "since = desde",
+          "description": "Filtra eventos da última hora.",
+          "application": "Analise janela de incidente recente.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-apt",
+      "module_id": "linux-08",
+      "type": "command",
+      "title": "apt",
+      "full_name": "Advanced Package Tool",
+      "technical_description": "Gerencia software em Debian/Ubuntu.",
+      "simplified_description": "Gerencia software em Debian/Ubuntu.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sudo apt update",
+          "nomenclature": "update = atualizar índice",
+          "description": "Atualiza lista de pacotes disponíveis; NÃO instala atualizações.",
+          "application": "Prepare consulta às versões dos repositórios.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "apt list --upgradable",
+          "nomenclature": "list = listar; upgradable = atualizáveis",
+          "description": "Mostra pacotes com versões mais novas disponíveis.",
+          "application": "Avalie impacto antes de uma janela de manutenção.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "sudo apt upgrade",
+          "nomenclature": "upgrade = atualizar pacotes",
+          "description": "Instala atualizações compatíveis com as regras do apt.",
+          "application": "Aplique correções em janela planejada.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "sudo apt install nginx",
+          "nomenclature": "install = instalar",
+          "description": "Instala nginx e dependências.",
+          "application": "Monte servidor web de laboratório.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "apt show nginx",
+          "nomenclature": "show = mostrar",
+          "description": "Exibe metadados e dependências de pacote.",
+          "application": "Confira o que será instalado.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "apt search openssh-server",
+          "nomenclature": "search = pesquisar",
+          "description": "Pesquisa pacotes nos repositórios.",
+          "application": "Encontre o nome de pacote SSH.",
+          "featured": false
+        },
+        {
+          "id": "007",
+          "example": "sudo apt remove nginx",
+          "nomenclature": "remove = remover",
+          "description": "Remove pacote, normalmente preservando arquivos de configuração.",
+          "application": "Desinstale serviço de testes.",
+          "featured": false
+        },
+        {
+          "id": "008",
+          "example": "sudo apt purge nginx",
+          "nomenclature": "purge = remover inclusive arquivos de configuração do pacote",
+          "description": "Remove pacote e arquivos de configuração geridos pelo pacote.",
+          "application": "Faça limpeza completa somente após backup/revisão.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-dpkg",
+      "module_id": "linux-08",
+      "type": "command",
+      "title": "dpkg",
+      "full_name": "Debian package (ferramenta de pacotes)",
+      "technical_description": "Consulta ou opera pacotes .deb.",
+      "simplified_description": "Consulta ou opera pacotes .deb.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "dpkg -l",
+          "nomenclature": "l = list",
+          "description": "Lista pacotes conhecidos.",
+          "application": "Audite software instalado.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "dpkg -L openssh-server",
+          "nomenclature": "L = list files (maiúsculo)",
+          "description": "Lista arquivos pertencentes ao pacote.",
+          "application": "Descubra onde arquivos do SSH foram instalados.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "dpkg -S /usr/bin/ssh",
+          "nomenclature": "S = search owner (maiúsculo)",
+          "description": "Descobre qual pacote possui o arquivo.",
+          "application": "Identifique origem de um executável.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-hostnamectl",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "hostnamectl",
+      "full_name": "hostname control",
+      "technical_description": "Consulta e modifica o nome da máquina.",
+      "simplified_description": "Consulta e modifica o nome da máquina.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "hostnamectl",
+          "nomenclature": "sem opção",
+          "description": "Mostra hostname e dados do sistema.",
+          "application": "Inventarie servidor.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "hostnamectl status",
+          "nomenclature": "status = estado",
+          "description": "Exibe informações de hostname.",
+          "application": "Confirme identidade da máquina.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-timedatectl",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "timedatectl",
+      "full_name": "time/date control",
+      "technical_description": "Gerencia e consulta tempo e fuso do sistema.",
+      "simplified_description": "Gerencia e consulta tempo e fuso do sistema.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "timedatectl",
+          "nomenclature": "sem opção",
+          "description": "Mostra relógio, fuso e sincronização.",
+          "application": "Diagnostique data incorreta em logs e certificados.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "timedatectl status",
+          "nomenclature": "status = estado",
+          "description": "Exibe status de tempo.",
+          "application": "Verifique se o serviço de sincronização está ativo.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-uname",
+      "module_id": "linux-10",
+      "type": "command",
+      "title": "uname",
+      "full_name": "Unix name",
+      "technical_description": "Exibe informações sobre kernel/sistema.",
+      "simplified_description": "Exibe informações sobre kernel/sistema.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "uname -r",
+          "nomenclature": "r = kernel release",
+          "description": "Mostra versão de lançamento do kernel.",
+          "application": "Confira kernel para compatibilidade.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "uname -a",
+          "nomenclature": "a = all",
+          "description": "Exibe várias informações do kernel e da máquina.",
+          "application": "Reúna dados para chamado de suporte.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ip",
+      "module_id": "linux-14",
+      "type": "command",
+      "title": "ip",
+      "full_name": "internet protocol (ferramenta iproute2)",
+      "technical_description": "Consulta e administra endereços, interfaces e rotas.",
+      "simplified_description": "Consulta e administra endereços, interfaces e rotas.",
+      "keywords": [
+        "ver ip",
+        "gateway",
+        "endereço de rede"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "ip a",
+          "nomenclature": "a = address (abreviação do objeto)",
+          "description": "Lista informações de endereços e interfaces.",
+          "application": "Identifique IP da máquina.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "ip -br a",
+          "nomenclature": "br = brief",
+          "description": "Exibe resumo dos endereços.",
+          "application": "Veja rapidamente IPs nas interfaces.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "ip link show",
+          "nomenclature": "link = interfaces; show = mostrar",
+          "description": "Mostra interfaces de rede e estados.",
+          "application": "Confira se NIC aparece UP/DOWN.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "ip route",
+          "nomenclature": "route = roteamento",
+          "description": "Mostra tabela de rotas.",
+          "application": "Descubra gateway padrão.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "ip -4 addr show",
+          "nomenclature": "4 = IPv4",
+          "description": "Filtra endereços IPv4.",
+          "application": "Analise a rede local.",
+          "featured": false
+        },
+        {
+          "id": "006",
+          "example": "ip -6 addr show",
+          "nomenclature": "6 = IPv6",
+          "description": "Filtra endereços IPv6.",
+          "application": "Verifique conectividade IPv6.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ss",
+      "module_id": "linux-14",
+      "type": "command",
+      "title": "ss",
+      "full_name": "socket statistics",
+      "technical_description": "Inspeciona sockets e portas.",
+      "simplified_description": "Inspeciona sockets e portas.",
+      "keywords": [
+        "porta aberta",
+        "programa usando porta"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "ss -t",
+          "nomenclature": "t = TCP",
+          "description": "Mostra sockets TCP.",
+          "application": "Investigue conexões TCP.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "ss -u",
+          "nomenclature": "u = UDP",
+          "description": "Mostra sockets UDP.",
+          "application": "Investigue tráfego UDP.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "ss -l",
+          "nomenclature": "l = listening",
+          "description": "Mostra sockets em escuta.",
+          "application": "Veja serviços aguardando conexões.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "ss -n",
+          "nomenclature": "n = numeric",
+          "description": "Evita resolver nomes e mostra endereços/portas numéricas.",
+          "application": "Leia portas sem resolução de nomes.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "sudo ss -tulnp",
+          "nomenclature": "t = TCP; u = UDP; l = listening; n = numeric; p = processes",
+          "description": "Lista portas em escuta e processos associados.",
+          "application": "Descubra qual programa está usando uma porta.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ping",
+      "module_id": "linux-14",
+      "type": "command",
+      "title": "ping",
+      "full_name": "ping = eco de teste (não é sigla padronizada)",
+      "technical_description": "Testa respostas ICMP e latência.",
+      "simplified_description": "Testa respostas ICMP e latência.",
+      "keywords": [
+        "testar conexão",
+        "computador responde"
+      ],
+      "options": [
+        {
+          "id": "001",
+          "example": "ping -c 4 1.1.1.1",
+          "nomenclature": "c = count",
+          "description": "Envia quatro solicitações de eco.",
+          "application": "Teste conectividade com endereço público.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "ping -c 4 gateway.local",
+          "nomenclature": "c = count",
+          "description": "Testa nome, se resolvido; ICMP pode ser bloqueado.",
+          "application": "Diferencie problema de DNS de rede quando comparado a IP.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-curl",
+      "module_id": "linux-14",
+      "type": "command",
+      "title": "curl",
+      "full_name": "client URL (nome histórico)",
+      "technical_description": "Faz requisições e transferências via URL.",
+      "simplified_description": "Faz requisições e transferências via URL.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "curl -I https://example.com",
+          "nomenclature": "I = HEAD / cabeçalhos",
+          "description": "Solicita só cabeçalhos HTTP (quando suportado).",
+          "application": "Verifique status do serviço web.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "curl -L https://example.com",
+          "nomenclature": "L = location / seguir redirecionamento",
+          "description": "Segue redirects HTTP.",
+          "application": "Valide destino final de uma URL.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "curl -v https://example.com",
+          "nomenclature": "v = verbose",
+          "description": "Exibe detalhes da conexão e protocolo.",
+          "application": "Diagnostique TLS, conexão ou HTTP.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "curl -sS https://example.com",
+          "nomenclature": "s = silent; S = show errors",
+          "description": "Suprime progresso, preservando mensagens de erro.",
+          "application": "Use em scripts com saída mais limpa.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "curl -o pagina.html https://example.com",
+          "nomenclature": "o = output file",
+          "description": "Salva a resposta em arquivo.",
+          "application": "Guarde resposta web para inspeção.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-dig",
+      "module_id": "linux-15",
+      "type": "command",
+      "title": "dig",
+      "full_name": "domain information groper",
+      "technical_description": "Consulta registros de DNS.",
+      "simplified_description": "Consulta registros de DNS.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "dig example.com A",
+          "nomenclature": "A = registro IPv4",
+          "description": "Consulta endereços A.",
+          "application": "Verifique resolução IPv4.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "dig example.com MX",
+          "nomenclature": "MX = mail exchanger",
+          "description": "Consulta servidores de e-mail do domínio.",
+          "application": "Diagnostique entregas de e-mail.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "dig +short example.com",
+          "nomenclature": "+short = saída resumida",
+          "description": "Mostra respostas DNS sem muitos detalhes.",
+          "application": "Obtenha rapidamente os registros retornados.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ssh",
+      "module_id": "linux-14",
+      "type": "command",
+      "title": "ssh",
+      "full_name": "secure shell",
+      "technical_description": "Abre sessão remota criptografada.",
+      "simplified_description": "Abre sessão remota criptografada.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "ssh admin@192.168.1.50",
+          "nomenclature": "usuario@host = identidade e destino",
+          "description": "Conecta à máquina na porta padrão (22).",
+          "application": "Acesse servidor de laboratório.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "ssh -p 2222 admin@192.168.1.50",
+          "nomenclature": "p = port (minúsculo)",
+          "description": "Usa porta SSH diferente da padrão.",
+          "application": "Acesse servidor com SSH alternativo.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "ssh -i ~/.ssh/id_ed25519 admin@192.168.1.50",
+          "nomenclature": "i = identity file",
+          "description": "Usa a chave privada especificada.",
+          "application": "Autentique com chaves SSH.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "ssh -v admin@192.168.1.50",
+          "nomenclature": "v = verbose",
+          "description": "Mostra diagnóstico da conexão.",
+          "application": "Investigue negociação/autenticação SSH.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-scp",
+      "module_id": "linux-14",
+      "type": "command",
+      "title": "scp",
+      "full_name": "secure copy",
+      "technical_description": "Copia arquivos entre máquina local e remota, via SSH.",
+      "simplified_description": "Copia arquivos entre máquina local e remota, via SSH.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "scp relatorio.txt admin@192.168.1.50:/tmp/",
+          "nomenclature": "sem opção",
+          "description": "Envia arquivo local ao servidor.",
+          "application": "Transfira um relatório.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "scp -r ~/lab/site admin@192.168.1.50:/tmp/",
+          "nomenclature": "r = recursive",
+          "description": "Envia uma pasta inteira.",
+          "application": "Copie um site de teste.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "scp -P 2222 relatorio.txt admin@192.168.1.50:/tmp/",
+          "nomenclature": "P = port (maiúsculo no scp)",
+          "description": "Usa porta SSH não padrão.",
+          "application": "Transfira por SSH alternativo.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "scp admin@192.168.1.50:/tmp/relatorio.txt .",
+          "nomenclature": "origem remota, destino local .",
+          "description": "Baixa arquivo para o diretório atual.",
+          "application": "Traga registros para análise local.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-ufw",
+      "module_id": "linux-22",
+      "type": "command",
+      "title": "ufw",
+      "full_name": "uncomplicated firewall",
+      "technical_description": "Gerencia regras simples de firewall Ubuntu.",
+      "simplified_description": "Gerencia regras simples de firewall Ubuntu.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "sudo ufw status",
+          "nomenclature": "status = estado",
+          "description": "Mostra se o firewall está ativo e as regras.",
+          "application": "Audite proteção básica.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "sudo ufw status numbered",
+          "nomenclature": "numbered = numerado",
+          "description": "Exibe regras numeradas.",
+          "application": "Identifique regras para revisão.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "sudo ufw status verbose",
+          "nomenclature": "verbose = detalhado",
+          "description": "Mostra políticas e detalhes adicionais.",
+          "application": "Audite política padrão.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "sudo ufw allow 22/tcp",
+          "nomenclature": "allow = permitir",
+          "description": "Permite TCP 22. MUDA firewall.",
+          "application": "Antes de ativar UFW remotamente, assegure a porta de administração correta.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "sudo ufw enable",
+          "nomenclature": "enable = ativar",
+          "description": "Ativa firewall. RISCO DE PERDER SSH.",
+          "application": "Faça apenas com acesso de recuperação e regras revisadas.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-tar",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "tar",
+      "full_name": "tape archive (origem histórica)",
+      "technical_description": "Empacota/desempacota arquivos; gzip é compressão adicional.",
+      "simplified_description": "Empacota/desempacota arquivos; gzip é compressão adicional.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "tar -cf backup.tar pasta/",
+          "nomenclature": "c = create; f = file",
+          "description": "Cria arquivo tar sem compressão.",
+          "application": "Empacote pasta de projeto.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "tar -czf backup.tar.gz pasta/",
+          "nomenclature": "c = create; z = gzip; f = file",
+          "description": "Cria pacote tar compactado com gzip.",
+          "application": "Arquive uma pasta de backup.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "tar -czvf backup.tar.gz pasta/",
+          "nomenclature": "c + z + v(verbose) + f",
+          "description": "Cria compactado exibindo arquivos processados.",
+          "application": "Acompanhe preparação de um pacote.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "tar -tzf backup.tar.gz",
+          "nomenclature": "t = list; z = gzip; f = file",
+          "description": "Lista o conteúdo sem extrair.",
+          "application": "Confira estrutura antes de restaurar.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "tar -xzf backup.tar.gz -C ~/lab/restaurado",
+          "nomenclature": "x = extract; z = gzip; f = file; C = directory",
+          "description": "Extrai para pasta de destino já existente.",
+          "application": "Restaure para laboratório, verificando nomes/caminhos primeiro.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-rsync",
+      "module_id": "linux-02",
+      "type": "command",
+      "title": "rsync",
+      "full_name": "remote sync (nome histórico)",
+      "technical_description": "Sincroniza arquivos localmente ou por SSH.",
+      "simplified_description": "Sincroniza arquivos localmente ou por SSH.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "rsync -av ~/lab/origem/ ~/lab/destino/",
+          "nomenclature": "a = archive; v = verbose",
+          "description": "Sincroniza o conteúdo da origem preservando atributos.",
+          "application": "Copie dados de trabalho com detalhes.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "rsync -avh ~/lab/origem/ ~/lab/destino/",
+          "nomenclature": "a = archive; v = verbose; h = human-readable",
+          "description": "Mostra transferências de forma legível.",
+          "application": "Faça cópia incremental de laboratório.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "rsync -avhn ~/lab/origem/ ~/lab/destino/",
+          "nomenclature": "a + v + h; n = dry-run",
+          "description": "Simula operações sem transferir/mudar arquivos.",
+          "application": "Confira impacto antes de executar sincronização real.",
+          "featured": true
+        },
+        {
+          "id": "004",
+          "example": "rsync -av --progress ~/lab/origem/ ~/lab/destino/",
+          "nomenclature": "progress = progresso",
+          "description": "Exibe progresso por arquivo transferido.",
+          "application": "Acompanhe cópia grande.",
+          "featured": false
+        },
+        {
+          "id": "005",
+          "example": "rsync -avhn --delete ~/lab/origem/ ~/lab/destino/",
+          "nomenclature": "n = dry-run; delete = apagar excedentes no destino",
+          "description": "SIMULA sincronização com exclusões; --delete real é PERIGOSO.",
+          "application": "Verifique o que seria apagado de um espelho; backup verdadeiro precisa de retenção/versionamento.",
+          "featured": false
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    },
+    {
+      "id": "linux-cmd-crontab",
+      "module_id": "linux-12",
+      "type": "command",
+      "title": "crontab",
+      "full_name": "cron table",
+      "technical_description": "Administra agendamentos cron da conta.",
+      "simplified_description": "Administra agendamentos cron da conta.",
+      "keywords": [],
+      "options": [
+        {
+          "id": "001",
+          "example": "crontab -l",
+          "nomenclature": "l = list",
+          "description": "Lista agendamentos atuais.",
+          "application": "Confira tarefas automáticas.",
+          "featured": true
+        },
+        {
+          "id": "002",
+          "example": "crontab -e",
+          "nomenclature": "e = edit",
+          "description": "Abre editor dos agendamentos.",
+          "application": "Agende uma rotina de laboratório.",
+          "featured": true
+        },
+        {
+          "id": "003",
+          "example": "crontab -r",
+          "nomenclature": "r = remove",
+          "description": "Remove TODA a crontab do usuário. ALTO RISCO.",
+          "application": "Reconheça a opção e evite acioná-la acidentalmente.",
+          "featured": true
+        }
+      ],
+      "options_coverage": "selected",
+      "learning_status": "not_assessed",
+      "related_entries": [],
+      "sources": [
+        "data/referencia-linux.md"
+      ]
+    }
+  ]
+}

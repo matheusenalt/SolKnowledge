@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main-window",
+  "description": "Janela local inicial, sem permissões de plugins, arquivos, shell ou rede.",
+  "windows": ["main"],
+  "permissions": []
+}
